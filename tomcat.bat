@@ -4,8 +4,8 @@ set "CURRENT_DIR=%cd%"
 
 set cmd=%1
 if "%cmd%"=="" goto show_welcome
-if not exist "C:\Zonebond Garden\WebContainer\apache-tomcat-6.0.37\bin" goto error_not_exist
-cd "C:\Zonebond Garden\WebContainer\apache-tomcat-6.0.37\bin\"
+if "%WEB_ENV_TEMP%" == "" goto error_not_exist
+cd "%WEB_ENV_TEMP%"\bin
 
 if %cmd%==start goto start
 if %cmd%==stop goto stop
